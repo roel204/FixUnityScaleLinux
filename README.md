@@ -38,25 +38,36 @@ virtual monitor is removed again.
 
 - KDE Plasma 6 on Wayland.
 - Unity Hub, installed so that typing `unityhub` in a terminal starts it.
-- A few small packages, installed with the command below.
+- A few small packages, installed with the command for your distribution below.
 
 
 ### Install the dependencies
 
-On Kubuntu / Ubuntu:
+**On Ubuntu / Kubuntu:**
 
 ```bash
 sudo apt install libkscreen-bin krfb iproute2 procps
 ```
 
 `apt` skips packages that are already installed, so it is safe to run even if you
-already have some or all of them. On other distributions, package names can differ:
-install the packages that provide the commands listed below.
+already have some or all of them.
+
+**On Arch / CachyOS:**
+
+```bash
+sudo pacman -S --needed libkscreen krfb iproute2 procps-ng
+```
+
+`--needed` makes `pacman` skip packages that are already installed (without it,
+`pacman` reinstalls them).
+
+On other distributions, package names can differ: install the packages that provide
+the commands listed below.
 
 
 ### Why these are needed
 
-| Package | Command | What the script uses it for |
+| Package (Kubuntu) | Command | What the script uses it for |
 |---|---|---|
 | `libkscreen-bin` | `kscreen-doctor` | Lists your monitors, to check whether the virtual monitor already exists |
 | `krfb` | `krfb-virtualmonitor` | Creates the virtual 2x monitor (a tool from KDE's desktop sharing app) |
