@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Unity Hub HiDPI
+Comment=Unity Hub with fixed scaling
+Categories=Development;
+Exec=/absolute/path/to/unity-scale.sh
+Icon=unityhub
+StartupNotify=true
+StartupWMClass=unityhub
+Terminal=false
